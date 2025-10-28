@@ -23,5 +23,5 @@ export default defineConfig({
     port: 5173,
     host: true
   },
-  base: process.env.NODE_ENV === 'production' ? '/Mbongeni-Security-Systems/' : './'
+  base: '/Mbongeni-Security-Systems-/'
 })
