@@ -2,6 +2,10 @@ import hikvisionLogo from '../assets/certifications/hikvision.png';
 import centurionLogo from '../assets/certifications/centurion.png';
 import geminiLogo from '../assets/certifications/gemini.png';
 
+console.log('Hikvision logo import:', hikvisionLogo);
+console.log('Centurion logo import:', centurionLogo);
+console.log('Gemini logo import:', geminiLogo);
+
 export interface Certification {
   id: number;
   name: string;

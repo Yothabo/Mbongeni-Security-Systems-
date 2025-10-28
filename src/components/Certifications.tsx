@@ -10,6 +10,13 @@ const Certifications: React.FC = () => {
     return styles.logoImage;
   };
 
+  // Debug: log the image URLs
+  React.useEffect(() => {
+    certifications.forEach(cert => {
+      console.log(`${cert.provider} logo URL:`, cert.logo);
+    });
+  }, []);
+
   return (
     <section className={styles.certifications}>
       <div className={styles.container}>
@@ -23,6 +30,12 @@ const Certifications: React.FC = () => {
                   alt={`${cert.provider} Logo`}
                   className={getLogoClass(cert.provider)}
                   loading="lazy"
+                  onError={(e) => {
+                    console.error(`Failed to load ${cert.provider} logo:`, e);
+                  }}
+                  onLoad={(e) => {
+                    console.log(`Successfully loaded ${cert.provider} logo:`, e);
+                  }}
                 />
               </div>
             </div>
