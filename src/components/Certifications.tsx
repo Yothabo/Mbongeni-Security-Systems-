@@ -1,24 +1,29 @@
 import React from 'react';
 import styles from './Certifications.module.css';
 
+// CORRECTED PATHS: from components to assets is just one level up
+import hikvisionLogo from '../assets/certifications/hikvision.png';
+import centurionLogo from '../assets/certifications/centurion.png';
+import geminiLogo from '../assets/certifications/gemini.png';
+
 const certifications = [
   {
     id: 1,
     name: "Hikvision Certified",
     provider: "Hikvision",
-    logo: "/certifications/hikvision.png"
+    logo: hikvisionLogo
   },
   {
     id: 2,
     name: "Centurion Systems",
     provider: "Centurion", 
-    logo: "/certifications/centurion.png"
+    logo: centurionLogo
   },
   {
     id: 3,
     name: "Gemini Certified",
     provider: "Gemini",
-    logo: "/certifications/gemini.png"
+    logo: geminiLogo
   }
 ];
 
