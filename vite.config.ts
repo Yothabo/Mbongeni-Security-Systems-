@@ -6,12 +6,21 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    copyPublicDir: true,
-    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg']
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          const extType = assetInfo.name.split('.').at(1);
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            return `assets/img/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+      }
+    }
   },
   server: {
     port: 5173,
     host: true
-  },
-  publicDir: 'public'
+  }
 })
