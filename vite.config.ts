@@ -22,6 +22,6 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true
-  },
-  base: '/Mbongeni-Security-Systems-/'
+  }
+  // Remove the base path - Vercel doesn't need it
 })
