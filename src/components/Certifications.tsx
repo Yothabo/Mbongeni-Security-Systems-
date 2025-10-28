@@ -1,29 +1,24 @@
 import React from 'react';
 import styles from './Certifications.module.css';
 
-// Import images directly
-import hikvisionLogo from '../assets/certifications/hikvision.png';
-import centurionLogo from '../assets/certifications/centurion.png';
-import geminiLogo from '../assets/certifications/gemini.png';
-
 const certifications = [
   {
     id: 1,
     name: "Hikvision Certified",
     provider: "Hikvision",
-    logo: hikvisionLogo
+    logo: "/certifications/hikvision.png"
   },
   {
     id: 2,
     name: "Centurion Systems",
     provider: "Centurion", 
-    logo: centurionLogo
+    logo: "/certifications/centurion.png"
   },
   {
     id: 3,
     name: "Gemini Certified",
     provider: "Gemini",
-    logo: geminiLogo
+    logo: "/certifications/gemini.png"
   }
 ];
 
