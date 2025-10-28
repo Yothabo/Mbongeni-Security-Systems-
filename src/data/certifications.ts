@@ -15,7 +15,7 @@ export const certifications: Certification[] = [
   {
     id: 2,
     name: "Centurion Systems",
-    provider: "Centurion",
+    provider: "Centurion", 
     logo: "/certifications/centurion.png"
   },
   {

@@ -10,6 +10,11 @@ const Certifications: React.FC = () => {
     return styles.logoImage;
   };
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    console.error(`Failed to load image: ${target.src}`);
+  };
+
   return (
     <section className={styles.certifications}>
       <div className={styles.container}>
@@ -22,6 +27,8 @@ const Certifications: React.FC = () => {
                   src={cert.logo} 
                   alt={`${cert.provider} Logo`}
                   className={getLogoClass(cert.provider)}
+                  onError={handleImageError}
+                  loading="lazy"
                 />
               </div>
             </div>
