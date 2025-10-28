@@ -70,6 +70,9 @@
   width: 100%;
   height: 100%;
   padding: 1rem;
+  /* Debug: add background to see container */
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px dashed red;
 }
 
 .logoImage {
@@ -78,6 +81,9 @@
   object-fit: contain;
   max-width: 180px;
   max-height: 120px;
+  /* Debug: make sure image is visible */
+  border: 2px solid blue !important;
+  background: rgba(0, 255, 0, 0.1) !important;
 }
 
 /* Specific styling for Gemini logo to make it much larger */
@@ -125,7 +131,7 @@
   .certificationsGrid {
     max-width: 300px;
   }
-  
+
   .certificationCard {
     aspect-ratio: 3/2;
     min-height: 150px;

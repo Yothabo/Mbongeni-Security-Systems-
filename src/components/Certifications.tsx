@@ -36,6 +36,10 @@ const Certifications: React.FC = () => {
                   onLoad={(e) => {
                     console.log(`Successfully loaded ${cert.provider} logo:`, e);
                   }}
+                  style={{
+                    border: '3px solid yellow',
+                    backgroundColor: 'rgba(255, 255, 0, 0.2)'
+                  }}
                 />
               </div>
             </div>
