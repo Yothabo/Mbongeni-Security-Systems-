@@ -1,0 +1,9 @@
+/* Base Styles */
+@import './styles/base/colors.css';
+@import './styles/base/reset.css';
+@import './styles/base/typography.css';
+
+/* Utility Styles */
+@import './styles/utilities/layout.css';
+@import './styles/utilities/spacing.css';
+@import './styles/utilities/responsive.css';
