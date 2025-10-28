@@ -6,22 +6,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg'],
-    rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(1);
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'img';
-          }
-          return `assets/${extType}/[name]-[hash][extname]`;
-        },
-      }
-    }
+    copyPublicDir: true,
+    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg']
   },
   server: {
     port: 5173,
     host: true
-  }
-  // Remove the base path - Vercel doesn't need it
+  },
+  publicDir: 'public'
 })
