@@ -7,17 +7,17 @@ const CertificationFooter: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.logos}>
           <img 
-            src="certifications/hikvision.png" 
+            src="/certifications/hikvision.png" 
             alt="Hikvision Certified" 
             className={styles.logo}
           />
           <img 
-            src="certifications/centurion.png" 
+            src="/certifications/centurion.png" 
             alt="Centurion Systems Certified" 
             className={styles.logo}
           />
           <img 
-            src="certifications/gemini.png" 
+            src="/certifications/gemini.png" 
             alt="Gemini Wireless Certified" 
             className={`${styles.logo} ${styles.geminiLogo}`}
           />
