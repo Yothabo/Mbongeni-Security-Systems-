@@ -6,19 +6,19 @@ const certifications = [
     id: 1,
     name: "Hikvision Certified",
     provider: "Hikvision",
-    logo: "/certifications/hikvision.png"
+    logo: "certifications/hikvision.png"
   },
   {
     id: 2,
-    name: "Centurion Systems", 
-    provider: "Centurion",
-    logo: "/certifications/centurion.png"
+    name: "Centurion Systems",
+    provider: "Centurion", 
+    logo: "certifications/centurion.png"
   },
   {
     id: 3,
     name: "Gemini Certified",
-    provider: "Gemini", 
-    logo: "/certifications/gemini.png"
+    provider: "Gemini",
+    logo: "certifications/gemini.png"
   }
 ];
 
