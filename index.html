@@ -124,8 +124,8 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mbongeni-security-system.netlify.app/" />
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+    <!-- Simplified PWA Manifest (No Service Worker) -->
+    <link rel="manifest" href="/manifest.json" />
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" href="/logo.png" sizes="32x32" />
@@ -149,11 +149,6 @@
         justify-content: center;
         font-family: Arial, sans-serif;
       }
-      
-      /* Ensure black background for PWA */
-      body {
-        background-color: #000000;
-      }
     </style>
   </head>
   <body>
@@ -171,17 +166,6 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- PWA Service Worker Registration -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').then(function(registration) {
-            console.log('SW registered: ', registration);
-          }).catch(function(registrationError) {
-            console.log('SW registration failed: ', registrationError);
-          });
-        });
-      }
-    </script>
+    <!-- No Service Worker - Removed for performance -->
   </body>
 </html>
