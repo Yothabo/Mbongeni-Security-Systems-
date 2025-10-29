@@ -23,6 +23,7 @@
     <meta property="og:image" content="https://mbongeni-security-system.netlify.app/logo.png" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Mbongeni Security Systems Logo" />
     <meta property="og:locale" content="en_ZA" />
     <meta property="og:site_name" content="Mbongeni Security Systems" />
     
@@ -32,6 +33,14 @@
     <meta property="twitter:title" content="Mbongeni Security Systems | Security Experts South Africa" />
     <meta property="twitter:description" content="Professional CCTV, electric fencing & access control installation. Certified Hikvision, Centurion & Gemini partner. Secure your property today." />
     <meta property="twitter:image" content="https://mbongeni-security-system.netlify.app/logo.png" />
+    <meta property="twitter:image:alt" content="Mbongeni Security Systems Logo" />
+    
+    <!-- Additional Social Meta -->
+    <meta name="twitter:creator" content="@mbongeni_security" />
+    <meta name="twitter:site" content="@mbongeni_security" />
+    
+    <!-- App Links -->
+    <meta property="al:web:url" content="https://mbongeni-security-system.netlify.app/" />
     
     <!-- Geographic Meta Tags -->
     <meta name="geo.region" content="ZA" />
@@ -115,12 +124,19 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mbongeni-security-system.netlify.app/" />
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" href="/logo.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/logo.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Mbongeni Security" />
+    
     <!-- Preload Critical Resources -->
     <link rel="preload" as="image" href="/logo.png" />
-    <link rel="preload" as="style" href="/src/index.css" />
-    
-    <!-- Performance & PWA Ready -->
-    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
     
     <style>
       /* Critical CSS for above-the-fold content */
@@ -132,6 +148,11 @@
         align-items: center;
         justify-content: center;
         font-family: Arial, sans-serif;
+      }
+      
+      /* Ensure black background for PWA */
+      body {
+        background-color: #000000;
       }
     </style>
   </head>
@@ -150,15 +171,17 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Performance Monitoring -->
+    <!-- PWA Service Worker Registration -->
     <script>
-      // Basic performance monitoring
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-          console.log('Page load time:', loadTime + 'ms');
-        }, 0);
-      });
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('SW registered: ', registration);
+          }).catch(function(registrationError) {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
     </script>
   </body>
 </html>
