@@ -4,6 +4,7 @@ import Services from '../components/Services';
 import Certifications from '../components/Certifications';
 import Gallery from '../components/Gallery';
 import ContactSection from '../components/ContactSection';
+import NewsSection from '../components/NewsSection';
 import styles from './Home.module.css';
 
 const Home: React.FC = () => {
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
       <Certifications />
       <Gallery />
       <ContactSection />
+      <NewsSection />
     </div>
   );
 };
