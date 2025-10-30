@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaTh, FaArrowRight } from 'react-icons/fa';
 import ServicesDropdown from './ServicesDropdown';
 import styles from './Hero.module.css';
+import logo from '../assets/logo.png';
 
 const Hero: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -86,7 +87,7 @@ const Hero: React.FC = () => {
       <header className={styles.stickyHeader}>
         <div className={styles.stickyContent}>
           <img
-            src="/logo.png"
+            src={logo}
             alt="Mbongeni Security Systems"
             className={styles.headerLogo}
             style={{
@@ -139,7 +140,7 @@ const Hero: React.FC = () => {
               <div className={styles.logoSection}>
                 <div className={styles.logoContainer}>
                   <img
-                    src="/logo.png"
+                    src={logo}
                     alt="Mbongeni Security Systems"
                     className={styles.heroLogo}
                     style={{
